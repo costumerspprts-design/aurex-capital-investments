@@ -1,0 +1,12 @@
+[
+  {
+    "id": "df22dd3e-9401-4ccf-b8f3-f3836f1a006d",
+    "username": "administration",
+    "email": "admin@aurex.com",
+    "password": "$2b$10$vmYhB2OKiohKDrFYcOYgr.G9VARVChsbl2UclCD67LYmognYy5LfO",
+    "role": "admin",
+    "balance": 0,
+    "createdAt": "2026-01-20T14:27:15.688Z",
+    "status": "active"
+  }
+]
