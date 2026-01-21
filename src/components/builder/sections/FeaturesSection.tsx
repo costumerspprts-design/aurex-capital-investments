@@ -8,8 +8,9 @@ export function FeaturesSection({ pageId, section }: { pageId: string, section: 
   const features = section.content.features || [];
 
   const updateFeature = (index: number, key: string, value: string) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const newFeatures = features.map((f: any, i: number) => i === index ? { ...f, [key]: value } : f);
+    const newFeatures = features.map((f: { title: string; description: string }, i: number) =>
+      i === index ? { ...f, [key]: value } : f
+    );
     updateSection(pageId, section.id, { features: newFeatures });
   };
 
@@ -18,7 +19,7 @@ export function FeaturesSection({ pageId, section }: { pageId: string, section: 
     <section className="py-20 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature: any, index: number) => (
+            {features.map((feature: { title: string; description: string }, index: number) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
                     <div className="text-blue-600 mb-4">
                         <CheckCircle size={32} />
