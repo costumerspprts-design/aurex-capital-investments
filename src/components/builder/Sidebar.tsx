@@ -71,17 +71,41 @@ export function Sidebar() {
         <h2 className="font-bold text-lg text-blue-600">Bee Ai Builder</h2>
       </div>
 
-      <div className="flex border-b text-sm">
-        <button onClick={() => setTab('pages')} className={`flex-1 py-3 text-center transition-colors ${tab === 'pages' ? 'border-b-2 border-blue-600 font-medium text-blue-600' : 'text-gray-500 hover:text-gray-700'}`}>Pages</button>
-        <button onClick={() => setTab('assets')} className={`flex-1 py-3 text-center transition-colors ${tab === 'assets' ? 'border-b-2 border-blue-600 font-medium text-blue-600' : 'text-gray-500 hover:text-gray-700'}`}>Assets</button>
+      <div className="flex border-b text-sm" role="tablist">
+        <button
+          role="tab"
+          id="tab-pages"
+          aria-selected={tab === 'pages'}
+          aria-controls="panel-pages"
+          onClick={() => setTab('pages')}
+          className={`flex-1 py-3 text-center transition-colors ${tab === 'pages' ? 'border-b-2 border-blue-600 font-medium text-blue-600' : 'text-gray-500 hover:text-gray-700'}`}
+        >
+          Pages
+        </button>
+        <button
+          role="tab"
+          id="tab-assets"
+          aria-selected={tab === 'assets'}
+          aria-controls="panel-assets"
+          onClick={() => setTab('assets')}
+          className={`flex-1 py-3 text-center transition-colors ${tab === 'assets' ? 'border-b-2 border-blue-600 font-medium text-blue-600' : 'text-gray-500 hover:text-gray-700'}`}
+        >
+          Assets
+        </button>
       </div>
 
       <div className="p-4 flex-1 overflow-y-auto">
         {tab === 'pages' ? (
-            <>
+            <div role="tabpanel" id="panel-pages" aria-labelledby="tab-pages">
                 <div className="flex items-center justify-between mb-2">
                     <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Pages</h3>
-                    <button onClick={() => setIsAdding(!isAdding)} className="text-gray-500 hover:text-blue-600">
+                    <button
+                        onClick={() => setIsAdding(!isAdding)}
+                        className="text-gray-500 hover:text-blue-600"
+                        aria-label="Add new page"
+                        aria-expanded={isAdding}
+                        title="Add new page"
+                    >
                         <Plus size={16} />
                     </button>
                 </div>
@@ -115,9 +139,9 @@ export function Sidebar() {
                     </div>
                 ))}
                 </nav>
-            </>
+            </div>
         ) : (
-            <div className="space-y-4">
+            <div role="tabpanel" id="panel-assets" aria-labelledby="tab-assets" className="space-y-4">
                 <div className="grid grid-cols-2 gap-2">
                     {[1, 2, 3, 4].map((i) => (
                         <div key={i} className="aspect-square bg-gray-100 rounded overflow-hidden relative group cursor-pointer border border-transparent hover:border-blue-500">
