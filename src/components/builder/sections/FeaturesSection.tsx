@@ -13,11 +13,11 @@ export function FeaturesSection({ pageId, section }: { pageId: string, section: 
     updateSection(pageId, section.id, { features: newFeatures });
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return (
     <section className="py-20 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8">
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {features.map((feature: any, index: number) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
                     <div className="text-blue-600 mb-4">
