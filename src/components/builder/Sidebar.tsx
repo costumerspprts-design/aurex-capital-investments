@@ -81,7 +81,7 @@ export function Sidebar() {
             <>
                 <div className="flex items-center justify-between mb-2">
                     <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Pages</h3>
-                    <button onClick={() => setIsAdding(!isAdding)} className="text-gray-500 hover:text-blue-600">
+                    <button onClick={() => setIsAdding(!isAdding)} className="text-gray-500 hover:text-blue-600" aria-label="Add new page">
                         <Plus size={16} />
                     </button>
                 </div>

@@ -5,8 +5,8 @@ export function Toolbar() {
   return (
     <div className="w-full flex items-center justify-between">
       <div className="flex items-center space-x-2">
-         <button className="p-2 text-gray-500 hover:bg-gray-100 rounded" title="Desktop View"><Monitor size={20} /></button>
-         <button className="p-2 text-gray-500 hover:bg-gray-100 rounded" title="Mobile View"><Smartphone size={20} /></button>
+         <button className="p-2 text-gray-500 hover:bg-gray-100 rounded" title="Desktop View" aria-label="Switch to desktop view"><Monitor size={20} /></button>
+         <button className="p-2 text-gray-500 hover:bg-gray-100 rounded" title="Mobile View" aria-label="Switch to mobile view"><Smartphone size={20} /></button>
       </div>
 
       <div className="flex items-center space-x-4">
