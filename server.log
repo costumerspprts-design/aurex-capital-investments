@@ -1,5 +1,5 @@
 
-> bee-ai@0.1.0 dev
+> bee-ai@0.1.0 dev /app
 > next dev
 
 ▲ Next.js 16.1.4 (Turbopack)
@@ -7,8 +7,6 @@
 - Network:       http://192.168.0.2:3000
 
 ✓ Starting...
-✓ Ready in 1077ms
- HEAD / 200 in 3.3s (compile: 3.1s, render: 202ms)
- GET /builder 200 in 1019ms (compile: 884ms, render: 135ms)
- GET /builder 200 in 240ms (compile: 87ms, render: 153ms)
-[?25h
+✓ Ready in 1129ms
+ HEAD / 200 in 3.1s (compile: 2.9s, render: 244ms)
+ GET /builder 200 in 930ms (compile: 784ms, render: 147ms)

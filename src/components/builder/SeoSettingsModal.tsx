@@ -13,7 +13,7 @@ export function SeoSettingsModal({ onClose }: { onClose: () => void }) {
       <div className="bg-white rounded-lg shadow-xl w-full max-w-md p-6 m-4 animate-in zoom-in-95">
         <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold">SEO & Page Settings</h2>
-            <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
+            <button onClick={onClose} className="text-gray-500 hover:text-gray-700" aria-label="Close">
                 <X size={24} />
             </button>
         </div>
