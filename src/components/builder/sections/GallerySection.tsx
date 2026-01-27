@@ -2,7 +2,7 @@ import React from 'react';
 import { useBuilderStore } from '@/lib/store';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function GallerySection({ pageId, section }: { pageId: string, section: any }) {
+export function GallerySection({ section }: { pageId: string, section: any }) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { updateSection } = useBuilderStore();
   const images = section.content.images || [
