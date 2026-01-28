@@ -13,36 +13,49 @@ export function SeoSettingsModal({ onClose }: { onClose: () => void }) {
       <div className="bg-white rounded-lg shadow-xl w-full max-w-md p-6 m-4 animate-in zoom-in-95">
         <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold">SEO & Page Settings</h2>
-            <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
+            <button onClick={onClose} className="text-gray-500 hover:text-gray-700" aria-label="Close">
                 <X size={24} />
             </button>
         </div>
 
         <div className="space-y-4">
             <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Page Title (Meta Title)</label>
+                <label htmlFor="seo-title" className="block text-sm font-medium text-gray-700 mb-1">Page Title (Meta Title)</label>
                 <input
+                    id="seo-title"
                     type="text"
                     value={activePage.seo.title}
                     onChange={(e) => updatePageSeo(activePage.id, { title: e.target.value })}
                     className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:outline-none"
                     placeholder="e.g. Home - My Website"
                 />
-                <p className="text-xs text-gray-500 mt-1">Recommended length: 50-60 characters</p>
+                <div className="flex justify-between items-center mt-1">
+                    <p className="text-xs text-gray-500">Recommended length: 50-60 characters</p>
+                    <p className={`text-xs font-medium ${activePage.seo.title.length > 60 ? "text-orange-500" : "text-gray-400"}`}>
+                        {activePage.seo.title.length} / 60
+                    </p>
+                </div>
             </div>
             <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Meta Description</label>
+                <label htmlFor="seo-description" className="block text-sm font-medium text-gray-700 mb-1">Meta Description</label>
                 <textarea
+                    id="seo-description"
                     value={activePage.seo.description}
                     onChange={(e) => updatePageSeo(activePage.id, { description: e.target.value })}
                     className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:outline-none h-24"
                     placeholder="Brief description of this page for search engines..."
                 />
-                 <p className="text-xs text-gray-500 mt-1">Recommended length: 150-160 characters</p>
+                <div className="flex justify-between items-center mt-1">
+                    <p className="text-xs text-gray-500">Recommended length: 150-160 characters</p>
+                    <p className={`text-xs font-medium ${activePage.seo.description.length > 160 ? "text-orange-500" : "text-gray-400"}`}>
+                        {activePage.seo.description.length} / 160
+                    </p>
+                </div>
             </div>
              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">URL Slug</label>
+                <label htmlFor="seo-slug" className="block text-sm font-medium text-gray-700 mb-1">URL Slug</label>
                 <input
+                    id="seo-slug"
                     type="text"
                     value={activePage.slug}
                     disabled
