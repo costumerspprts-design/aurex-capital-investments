@@ -1,0 +1,14 @@
+
+> bee-ai@0.1.0 dev /app
+> next dev
+
+▲ Next.js 16.1.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+
+✓ Starting...
+✓ Ready in 1083ms
+○ Compiling /builder ...
+ GET /builder 200 in 5.2s (compile: 4.7s, render: 490ms)
+ ELIFECYCLE  Command failed.
+[?25h
