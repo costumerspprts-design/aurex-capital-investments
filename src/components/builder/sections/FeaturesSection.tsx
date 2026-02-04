@@ -1,24 +1,27 @@
 import React from 'react';
-import { useBuilderStore } from '@/lib/store';
+import { useBuilderStore, Section } from '@/lib/store';
 import { CheckCircle } from 'lucide-react';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function FeaturesSection({ pageId, section }: { pageId: string, section: any }) {
+interface Feature {
+    title: string;
+    description: string;
+    [key: string]: string;
+}
+
+export function FeaturesSection({ pageId, section }: { pageId: string, section: Section }) {
   const { updateSection } = useBuilderStore();
-  const features = section.content.features || [];
+  const features = (section.content.features as Feature[]) || [];
 
   const updateFeature = (index: number, key: string, value: string) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const newFeatures = features.map((f: any, i: number) => i === index ? { ...f, [key]: value } : f);
+    const newFeatures = features.map((f, i) => i === index ? { ...f, [key]: value } : f);
     updateSection(pageId, section.id, { features: newFeatures });
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return (
     <section className="py-20 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature: any, index: number) => (
+            {features.map((feature, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
                     <div className="text-blue-600 mb-4">
                         <CheckCircle size={32} />

@@ -1,11 +1,10 @@
 import React from 'react';
-import { useBuilderStore } from '@/lib/store';
+import { useBuilderStore, Section } from '@/lib/store';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function GallerySection({ pageId, section }: { pageId: string, section: any }) {
+export function GallerySection({ section }: { pageId: string, section: Section }) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { updateSection } = useBuilderStore();
-  const images = section.content.images || [
+  const images = (section.content.images as string[]) || [
     'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
     'https://images.unsplash.com/photo-1493246507139-91e8fad9978e',
     'https://images.unsplash.com/photo-1518791841217-8f162f1e1131'
